@@ -148,8 +148,6 @@
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Courses
-
-
                                 </p>
                             </a>
 
@@ -168,12 +166,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Add Category</h1>
+                            <h1 class="m-0">Dashboard</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Add Category</li>
+                                <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -186,29 +184,58 @@
                 <div class="container-fluid">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Add Your Categories Here</h3>
+                        <h3 class="card-title">Add Your Courses Here</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form method="post" action="/admin/create-category" enctype="multipart/form-data">
+                    <form method="post" action="/admin/create-course" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="sKiOX5xRBtkMow2pjpT1JA6ODW6Eq0VqpOfMCgPh">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Categories Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Enter category name">
+                                <label for="exampleInputEmail1">Course Name</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter course name">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Categories Slug</label>
-                                <input type="text" class="form-control" name="slug" placeholder="Enter category slug">
+                                <label for="exampleInputEmail1">Course Slug </label>
+                                <input type="text" class="form-control" name="slug" placeholder="Enter slug">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputFile">Category icons</label>
+                                <label for="exampleInputFile">Course Thumbnail</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" name="icon" class="custom-file-input">
+                                        <input type="file" name="thumbnail" class="custom-file-input">
                                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                     </div>
                                 </div>
+                            </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                        </div>
+                            <div class="form-group">
+                                <input type="checkbox" class="pt-2" name="isFeatured" value="on">
+                                <label for="exampleInputEmail1">Check this if the course is a featured course </label>
+                
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" class="pt-2" id="isFree" name="isFree" onchange="free()" value="on">
+                                <label for="exampleInputEmail1">Check this if the course is free course</label>
+                
+                            </div>
+                            <div class="form-group" id="price-input">
+                                <label for="exampleInputEmail1">Price </label>
+                                <input type="number" step="any" class="form-control" name="price" value="0"
+                                    placeholder="Enter category name">
+                            </div>
+                
+                            <div class="form-group" id="price-input">
+                                <label for="exampleInputEmail1">Choose Category </label>
+                                <select name="category_id" id="" class="form-control">
+                                    <option value="5">test</option>
+                                    <option value="1">Nepali</option>
+                                    <option value="2">Science</option>
+                                    <option value="3">Social</option>
+                                </select>
                             </div>
                         </div>
                         <!-- /.card-body -->
